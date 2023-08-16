@@ -1,1 +1,1 @@
-# TicTacToe
+# Connect 4
