@@ -13,3 +13,5 @@ I created connect 4 using the MERN stack with a high scores table that connects 
 
 ## Challenges
 The goal of this project was to learn how to connect data to the database. I used fetch statements as well as props to correctly display the data in a manner that I wanted. I also learned how to sue useEffect and useStates in react. I choose to keep the css simple on this project so I could focus more time on learning the technical aspects. 
+
+![](screenshots/connect4.png)
