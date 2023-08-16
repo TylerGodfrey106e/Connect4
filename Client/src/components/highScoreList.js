@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 //import { useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
  
 const Record = (props) => (
  <tr>
@@ -10,7 +11,7 @@ const Record = (props) => (
  
 export default function RecordList() {
  const [records, setRecords] = useState([]);
- 
+ console.log("got here")
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
@@ -21,15 +22,21 @@ export default function RecordList() {
        window.alert(message);
        return;
      }
- 
-     const records = await response.json();
-     setRecords(records);
+
+     let records = await response.json();
+     const sorted = await records.sort(sortByScore);
+     setRecords(sorted);
    }
  
    getRecords();
  
    return;
  }, [records.length]);
+ 
+
+ function sortByScore(a, b) {
+  return a.moves - b.moves;
+}
  
 
  // This method will map out the records on the table
@@ -46,17 +53,26 @@ export default function RecordList() {
  
  // This following section will display the table with the records of individuals.
  return (
-   <div>
+  <>
+   <div className="highScoreList">
      <h3>High Score List</h3>
      <table className="table table-striped" style={{ marginTop: 20 }}>
        <thead>
          <tr>
            <th>Name</th>
-           <th>Position</th>
+           <th>Moves</th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>
      </table>
    </div>
+   <div>
+      <NavLink className="nav-link" to="/">
+        <button>
+          Back to Game
+        </button> 
+       </NavLink>
+   </div>
+  </>
  );
 }

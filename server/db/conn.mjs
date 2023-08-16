@@ -11,6 +11,6 @@ try {
   console.error(e);
 }
 
-let db = conn.db("tictactoe");
+let db = conn.db("connect_four");
 
 export default db;

@@ -6,6 +6,7 @@ body {
   font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  padding: 10px;
 }
 
 h1 {
@@ -56,29 +57,68 @@ body {
   padding: 0;
 }
 
+button {
+  padding: 10px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.nameForm {
+  position: relative;
+}
+
+.highScoreList {
+  background: #7ea3cc;
+  border: 1px solid #262626;
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+  
+}
+
+.board {
+  margin-left: 30%;
+}
+
+
+
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: radial-Gradient(#7ea3cc, #255c99);
+  border: 1px solid #262626;
   float: left;
-  font-size: 24px;
+  font-size: 44px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 44px;
+  height: 75px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 75px;
 }
+
+/* .board-row {
+  margin-left: 25%;
+  margin-right: 25%;
+} */
+
+/* .highScoreButton {
+  background: #7ea3cc;
+  padding: 10px;
+} */
 
 .board-row:after {
   clear: both;
   content: '';
   display: table;
+  
 }
 
 .status {
   margin-bottom: 10px;
+  border: solid 1px;
+  width: 200px;
+  padding: 5px;
 }
 .game {
   display: flex;

@@ -25,8 +25,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   let newDocument = {
     name: req.body.name,
-    position: req.body.position,
-    level: req.body.level,
+    moves: req.body.moves,
   };
   let collection = await db.collection("highScores");
   let result = await collection.insertOne(newDocument);
@@ -39,8 +38,7 @@ router.patch("/:id", async (req, res) => {
   const updates =  {
     $set: {
       name: req.body.name,
-      position: req.body.position,
-      level: req.body.level
+      moves: req.body.moves
     }
   };
 
